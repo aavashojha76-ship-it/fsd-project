@@ -1,0 +1,551 @@
+/* ============================================================
+   GLOBAL + COLOUR VARIABLES
+============================================================ */
+:root {
+  --neon-pink:   rgb(255, 0, 128);
+  --neon-purple: rgb(138, 43, 226);
+  --neon-blue:   rgb(0, 200, 255);
+  --neon-green:  rgb(0, 255, 170);
+  --neon-orange: rgb(255, 140, 0);
+  --neon-red:    rgb(255, 60, 60);
+  --neon-yellow: rgb(255, 210, 0);
+  --dark-bg:     rgb(8, 8, 22);
+  --glass:       rgba(255, 255, 255, 0.07);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  padding-top: 70px;
+  background: var(--dark-bg);
+  color: #e6e6f0;
+  overflow-x: hidden;
+}
+
+code, pre { font-family: 'Fira Code', monospace; }
+
+/* ============================================================
+   ANIMATED BACKGROUND
+============================================================ */
+.bg-animation {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: radial-gradient(circle at 20% 20%, rgb(35, 0, 60), rgb(8, 8, 22) 70%);
+}
+
+.bg-animation span {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0.55;
+  animation: floatParticle 20s infinite ease-in-out;
+}
+
+.bg-animation span:nth-child(1) { width: 300px; height: 300px; background: var(--neon-pink);   top: 5%;  left: 10%; }
+.bg-animation span:nth-child(2) { width: 250px; height: 250px; background: var(--neon-blue);   top: 60%; left: 80%; animation-delay: 3s; }
+.bg-animation span:nth-child(3) { width: 200px; height: 200px; background: var(--neon-purple); top: 30%; left: 50%; animation-delay: 6s; }
+.bg-animation span:nth-child(4) { width: 220px; height: 220px; background: var(--neon-green);  top: 80%; left: 20%; animation-delay: 2s; }
+.bg-animation span:nth-child(5) { width: 180px; height: 180px; background: var(--neon-orange); top: 15%; left: 75%; animation-delay: 5s; }
+.bg-animation span:nth-child(6) { width: 260px; height: 260px; background: var(--neon-red);    top: 45%; left: 5%;  animation-delay: 8s; }
+.bg-animation span:nth-child(7) { width: 210px; height: 210px; background: var(--neon-yellow); top: 70%; left: 55%; animation-delay: 4s; }
+.bg-animation span:nth-child(8) { width: 190px; height: 190px; background: var(--neon-purple); top: 25%; left: 35%; animation-delay: 7s; }
+
+@keyframes floatParticle {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(60px, -80px) scale(1.15); }
+  66%      { transform: translate(-50px, 60px) scale(0.9); }
+}
+
+/* ============================================================
+   NAVBAR
+============================================================ */
+.navbar {
+  background: rgba(8, 8, 22, 0.8) !important;
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar-brand {
+  background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  font-weight: 900;
+  animation: gradientShift 4s ease infinite;
+}
+
+.navbar-nav .nav-link {
+  color: #cfcfe6 !important;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after { width: 80%; }
+
+.navbar-nav .nav-link.active {
+  color: var(--neon-blue) !important;
+  font-weight: 600;
+}
+
+/* ============================================================
+   HERO
+============================================================ */
+.hero {
+  min-height: 100vh;
+  margin-top: -70px;
+  padding-top: 70px;
+  position: relative;
+  background: radial-gradient(circle at 50% 50%, rgba(138, 43, 226, 0.28), transparent 60%);
+  perspective: 1000px;
+}
+
+.hero-content { position: relative; z-index: 2; }
+
+.hero-title {
+  font-weight: 900;
+  animation: fadeInDown 1s ease;
+  text-shadow: 0 0 40px rgba(255, 0, 128, 0.5);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue), var(--neon-green));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientShift 4s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+
+.hero-subtitle { color: var(--neon-blue); animation: fadeInUp 1.2s ease; }
+.hero-desc     { animation: fadeInUp 1.4s ease; }
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   GLOW BUTTONS (per theme)
+============================================================ */
+.btn-glow,
+.btn-glow-orange,
+.btn-glow-purple,
+.btn-glow-green {
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  background-size: 200% 200%;
+  transition: all 0.4s ease;
+  animation: gradientShift 4s ease infinite;
+}
+
+.btn-glow {
+  background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple), var(--neon-blue));
+  box-shadow: 0 0 20px rgba(255, 0, 128, 0.4);
+}
+.btn-glow:hover {
+  color: white;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 35px rgba(255,0,128,0.8), 0 0 60px rgba(0,200,255,0.5);
+}
+
+.btn-glow-orange {
+  background: linear-gradient(135deg, var(--neon-orange), var(--neon-pink));
+  box-shadow: 0 0 18px rgba(255,140,0,0.5);
+}
+.btn-glow-orange:hover {
+  color: white;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 35px rgba(255,140,0,0.9), 0 0 60px rgba(255,0,128,0.5);
+}
+
+.btn-glow-purple {
+  background: linear-gradient(135deg, var(--neon-purple), rgb(99,102,241));
+  box-shadow: 0 0 18px rgba(138,43,226,0.5);
+}
+.btn-glow-purple:hover {
+  color: white;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 35px rgba(138,43,226,0.9), 0 0 60px rgba(99,102,241,0.5);
+}
+
+.btn-glow-green {
+  background: linear-gradient(135deg, var(--neon-yellow), var(--neon-green));
+  box-shadow: 0 0 18px rgba(0,255,170,0.5);
+  color: rgb(15,15,30);
+}
+.btn-glow-green:hover {
+  color: rgb(15,15,30);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 35px rgba(0,255,170,0.9), 0 0 60px rgba(255,210,0,0.5);
+}
+
+/* ============================================================
+   3D FLOATING CUBE
+============================================================ */
+.cube-wrapper {
+  perspective: 800px;
+  width: 120px;
+  height: 120px;
+  margin: 60px auto 0;
+}
+
+.cube {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: spinCube 12s infinite linear;
+}
+
+.cube .face {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: white;
+  font-size: 1.3rem;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  background: linear-gradient(135deg, rgba(255,0,128,0.75), rgba(0,200,255,0.75));
+  border-radius: 8px;
+  backdrop-filter: blur(6px);
+}
+
+.cube .front  { transform: translateZ(60px); }
+.cube .back   { transform: rotateY(180deg) translateZ(60px); }
+.cube .right  { transform: rotateY(90deg)  translateZ(60px); }
+.cube .left   { transform: rotateY(-90deg) translateZ(60px); }
+.cube .top    { transform: rotateX(90deg)  translateZ(60px); }
+.cube .bottom { transform: rotateX(-90deg) translateZ(60px); }
+
+@keyframes spinCube {
+  from { transform: rotateX(0)    rotateY(0); }
+  to   { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+/* ============================================================
+   SECTIONS + THEMES
+============================================================ */
+.section-3d {
+  position: relative;
+  padding: 80px 0;
+  transition: background 0.6s ease;
+}
+
+.theme-orange { background: radial-gradient(circle at 80% 20%, rgba(255,140,0,0.10), transparent 55%); }
+.theme-red    { background: radial-gradient(circle at 20% 30%, rgba(255,60,60,0.10), transparent 55%); }
+.theme-blue   { background: radial-gradient(circle at 80% 30%, rgba(0,200,255,0.10), transparent 55%); }
+.theme-purple { background: radial-gradient(circle at 20% 30%, rgba(138,43,226,0.12), transparent 55%); }
+.theme-green  { background: radial-gradient(circle at 80% 30%, rgba(0,255,170,0.10), transparent 55%); }
+
+.section-title {
+  font-weight: 800;
+  position: relative;
+  display: inline-block;
+  font-size: 2.2rem;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  margin: 12px auto 0;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
+  box-shadow: 0 0 20px var(--neon-pink);
+}
+
+/* Theme-specific underline colours */
+.theme-orange .section-title::after { background: linear-gradient(90deg, var(--neon-orange), var(--neon-pink)); box-shadow: 0 0 20px var(--neon-orange); }
+.theme-red    .section-title::after { background: linear-gradient(90deg, var(--neon-red), var(--neon-orange)); box-shadow: 0 0 20px var(--neon-red); }
+.theme-blue   .section-title::after { background: linear-gradient(90deg, var(--neon-blue), rgb(99,102,241)); box-shadow: 0 0 20px var(--neon-blue); }
+.theme-purple .section-title::after { background: linear-gradient(90deg, var(--neon-purple), rgb(99,102,241)); box-shadow: 0 0 20px var(--neon-purple); }
+.theme-green  .section-title::after { background: linear-gradient(90deg, var(--neon-yellow), var(--neon-green)); box-shadow: 0 0 20px var(--neon-green); }
+
+/* ============================================================
+   GRADIENT TEXT VARIANTS
+============================================================ */
+.gradient-text-orange,
+.gradient-text-red,
+.gradient-text-blue,
+.gradient-text-purple,
+.gradient-text-green {
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease infinite;
+}
+
+.gradient-text-orange { background-image: linear-gradient(90deg, var(--neon-orange), var(--neon-pink), var(--neon-orange)); }
+.gradient-text-red    { background-image: linear-gradient(90deg, var(--neon-red), var(--neon-orange), var(--neon-red)); }
+.gradient-text-blue   { background-image: linear-gradient(90deg, var(--neon-blue), rgb(99,102,241), var(--neon-blue)); }
+.gradient-text-purple { background-image: linear-gradient(90deg, var(--neon-purple), rgb(99,102,241), var(--neon-purple)); }
+.gradient-text-green  { background-image: linear-gradient(90deg, var(--neon-yellow), var(--neon-green), var(--neon-yellow)); }
+
+/* ============================================================
+   GLASS CARDS
+============================================================ */
+.glass-card {
+  background: var(--glass);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(138, 43, 226, 0.4);
+}
+
+/* ============================================================
+   DIAGRAM SVG STYLING
+============================================================ */
+.diagram-svg {
+  width: 100%;
+  height: auto;
+  max-height: 380px;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.1));
+}
+
+.diagram-box {
+  transition: filter 0.3s ease;
+}
+
+.diagram-box:hover {
+  filter: drop-shadow(0 0 15px rgb(255, 255, 255)) brightness(1.15);
+}
+
+/* ============================================================
+   3D CARD HOVER (JS tilt)
+============================================================ */
+.card-3d {
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+              box-shadow 0.4s ease;
+  transform-style: preserve-3d;
+}
+
+.card-3d:hover {
+  box-shadow: 0 25px 50px rgba(0, 200, 255, 0.35);
+}
+
+/* ============================================================
+   CODE BLOCKS
+============================================================ */
+.code-block {
+  background: rgb(15, 15, 30);
+  color: rgb(220, 220, 255);
+  padding: 18px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  overflow-x: auto;
+  border-left: 4px solid var(--neon-blue);
+  box-shadow: inset 0 0 30px rgba(0, 200, 255, 0.1);
+}
+
+.code-block code { color: rgb(220, 220, 255); }
+
+/* ============================================================
+   DEMO BOXES
+============================================================ */
+.demo-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px dashed rgba(0, 200, 255, 0.5);
+  border-radius: 16px;
+  padding: 25px;
+  margin-top: 15px;
+  backdrop-filter: blur(8px);
+}
+
+/* ============================================================
+   3D FLIP CARD
+============================================================ */
+.flip-card {
+  width: 180px;
+  height: 180px;
+  perspective: 1000px;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-inner { transform: rotateY(180deg); }
+
+.flip-front, .flip-back {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  font-weight: 700;
+  backface-visibility: hidden;
+  color: white;
+  font-size: 1.1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.flip-front {
+  background: linear-gradient(135deg, var(--neon-blue), rgb(99,102,241));
+}
+
+.flip-back {
+  background: linear-gradient(135deg, var(--neon-green), var(--neon-blue));
+  transform: rotateY(180deg);
+}
+
+/* ============================================================
+   AVATAR 3D
+============================================================ */
+.avatar-3d {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: white;
+  background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue));
+  box-shadow: 0 0 30px rgba(255, 0, 128, 0.6);
+  animation: floatY 3s ease-in-out infinite;
+}
+
+.avatar-red {
+  background: linear-gradient(135deg, var(--neon-red), var(--neon-orange));
+  box-shadow: 0 0 30px rgba(255, 60, 60, 0.6);
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+/* ============================================================
+   BOOTSTRAP CARD + FORM OVERRIDES
+============================================================ */
+.card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e6e6f0;
+  border-radius: 16px;
+}
+
+.card h5 { color: #fff; }
+
+.alert-info {
+  background: rgba(0, 200, 255, 0.15);
+  border-color: rgba(0, 200, 255, 0.4);
+  color: var(--neon-blue);
+}
+
+.form-control {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.form-control:focus {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--neon-blue);
+  color: #fff;
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.5);
+}
+
+.form-control::placeholder { color: rgba(255, 255, 255, 0.5); }
+
+/* ============================================================
+   ICON BOUNCE
+============================================================ */
+.icon-bounce { animation: iconBounce 2s infinite; }
+
+@keyframes iconBounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+
+/* ============================================================
+   TEXT COLOURS
+============================================================ */
+.text-purple { color: var(--neon-purple) !important; }
+
+/* ============================================================
+   FOOTER
+============================================================ */
+.footer-3d {
+  background: linear-gradient(90deg, rgba(255,0,128,0.15),
+              rgba(138,43,226,0.15), rgba(0,200,255,0.15));
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* ============================================================
+   BACK TO TOP
+============================================================ */
+#topBtn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: none;
+  width: 50px;
+  height: 50px;
+  z-index: 1000;
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media (max-width: 768px) {
+  .hero-title { font-size: 2rem; }
+  .section-title { font-size: 1.5rem; }
+  .cube-wrapper { width: 90px; height: 90px; margin-top: 30px; }
+  .cube .face { width: 90px; height: 90px; font-size: 1rem; }
+  .cube .front,  .cube .back  { transform: translateZ(45px); }
+  .cube .right,  .cube .left  { transform: rotateY(90deg)  translateZ(45px); }
+  .cube .top,    .cube .bottom{ transform: rotateX(90deg)  translateZ(45px); }
+  .diagram-svg { max-height: 300px; }
+}

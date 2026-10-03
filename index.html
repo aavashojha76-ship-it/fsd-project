@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CET138 ePortfolio - Full Stack Development</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80" tabindex="0">
+
+  <!-- Animated background particles -->
+  <div class="bg-animation">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark fixed-top shadow-lg">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#home">
+        <i class="bi bi-code-slash"></i> CET138 ePortfolio
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#fullstack">Full Stack</a></li>
+          <li class="nav-item"><a class="nav-link" href="#html">HTML</a></li>
+          <li class="nav-item"><a class="nav-link" href="#css">CSS</a></li>
+          <li class="nav-item"><a class="nav-link" href="#bootstrap">Bootstrap</a></li>
+          <li class="nav-item"><a class="nav-link" href="#javascript">JavaScript</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= HERO ================= -->
+  <section id="home" class="hero d-flex align-items-center text-white">
+    <div class="container text-center hero-content">
+      <h1 class="display-3 fw-bold hero-title">
+        Full Stack Development
+        <span class="gradient-text">ePortfolio</span>
+      </h1>
+      <p class="lead mt-3 hero-subtitle">CET138 – Assignment 1</p>
+      <p class="hero-desc">Demonstrating my understanding of the core technologies behind dynamic web applications.</p>
+      <a href="#fullstack" class="btn btn-glow btn-lg mt-3">
+        <i class="bi bi-rocket-takeoff"></i> Launch Portfolio
+      </a>
+
+      <!-- Floating 3D cube -->
+      <div class="cube-wrapper">
+        <div class="cube">
+          <div class="face front">HTML</div>
+          <div class="face back">CSS</div>
+          <div class="face right">JS</div>
+          <div class="face left">BS</div>
+          <div class="face top">FS</div>
+          <div class="face bottom">DB</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       SECTION 1: WHAT IS FULL STACK DEVELOPMENT?
+       THEME: ORANGE → PINK
+  ====================================================== -->
+  <section id="fullstack" class="py-5 section-3d theme-orange">
+    <div class="container">
+      <h2 class="section-title text-center mb-4">
+        <span class="gradient-text-orange">1. What is Full Stack Development?</span>
+      </h2>
+
+      <div class="row g-4">
+        <div class="col-md-7">
+          <div class="glass-card p-4">
+            <p>
+              <strong>Full stack development</strong> is the practice of building <em>both</em> the
+              <strong>front-end</strong> (client-side) and the <strong>back-end</strong> (server-side)
+              of a web application, along with the <strong>database</strong> that stores its data.
+            </p>
+            <h5 class="mt-4"><i class="bi bi-layers text-warning"></i> The Layers of the Stack</h5>
+            <ul>
+              <li><strong>Front-End:</strong> HTML, CSS, Bootstrap, JavaScript, React</li>
+              <li><strong>Back-End:</strong> Node.js, Python, PHP, Java</li>
+              <li><strong>Database:</strong> MySQL, PostgreSQL, MongoDB</li>
+              <li><strong>DevOps:</strong> Git, Docker, AWS, CI/CD</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- FULL STACK ARCHITECTURE DIAGRAM -->
+        <div class="col-md-5">
+          <div class="glass-card p-4">
+            <h5 class="text-center mb-3"><i class="bi bi-diagram-3-fill text-warning"></i> Architecture Diagram</h5>
+
+            <svg viewBox="0 0 400 420" class="diagram-svg" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="gClient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="rgb(255,140,0)"/>
+                  <stop offset="100%" stop-color="rgb(255,0,128)"/>
+                </linearGradient>
+                <linearGradient id="gServer" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="rgb(255,0,128)"/>
+                  <stop offset="100%" stop-color="rgb(138,43,226)"/>
+                </linearGradient>
+                <linearGradient id="gDB" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="rgb(138,43,226)"/>
+                  <stop offset="100%" stop-color="rgb(0,200,255)"/>
+                </linearGradient>
+              </defs>
+
+              <!-- CLIENT -->
+              <rect x="60" y="20" width="280" height="80" rx="16" fill="url(#gClient)" class="diagram-box">
+                <animate attributeName="opacity" values="1;0.85;1" dur="3s" repeatCount="indefinite"/>
+              </rect>
+              <text x="200" y="55" text-anchor="middle" fill="white" font-size="16" font-weight="700">🖥️ CLIENT (Browser)</text>
+              <text x="200" y="80" text-anchor="middle" fill="white" font-size="12">HTML · CSS · Bootstrap · JavaScript</text>
+
+              <!-- ARROW 1 -->
+              <line x1="200" y1="105" x2="200" y2="150" stroke="white" stroke-width="2" stroke-dasharray="6,4">
+                <animate attributeName="stroke-dashoffset" from="0" to="20" dur="1s" repeatCount="indefinite"/>
+              </line>
+              <polygon points="200,155 193,145 207,145" fill="white"/>
+              <text x="220" y="132" fill="white" font-size="11">HTTP Request</text>
+
+              <!-- SERVER -->
+              <rect x="60" y="160" width="280" height="80" rx="16" fill="url(#gServer)" class="diagram-box">
+                <animate attributeName="opacity" values="1;0.85;1" dur="3s" begin="1s" repeatCount="indefinite"/>
+              </rect>
+              <text x="200" y="195" text-anchor="middle" fill="white" font-size="16" font-weight="700">⚙️ SERVER</text>
+              <text x="200" y="220" text-anchor="middle" fill="white" font-size="12">Node.js · Python · Express · REST API</text>
+
+              <!-- ARROW 2 -->
+              <line x1="200" y1="245" x2="200" y2="290" stroke="white" stroke-width="2" stroke-dasharray="6,4">
+                <animate attributeName="stroke-dashoffset" from="0" to="20" dur="1s" repeatCount="indefinite"/>
+              </line>
+              <polygon points="200,295 193,285 207,285" fill="white"/>
+              <text x="220" y="272" fill="white" font-size="11">SQL Query</text>
+
+              <!-- DATABASE -->
+              <rect x="60" y="300" width="280" height="80" rx="16" fill="url(#gDB)" class="diagram-box">
+                <animate attributeName="opacity" values="1;0.85;1" dur="3s" begin="2s" repeatCount="indefinite"/>
+              </rect>
+              <text x="200" y="335" text-anchor="middle" fill="white" font-size="16" font-weight="700">🗄️ DATABASE</text>
+              <text x="200" y="360" text-anchor="middle" fill="white" font-size="12">MySQL · PostgreSQL · MongoDB</text>
+            </svg>
+
+            <p class="text-center small mt-2">Data flows from client → server → database and back.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Working Example -->
+      <div class="mt-5">
+        <h4><i class="bi bi-play-circle text-warning"></i> Working Example</h4>
+        <div class="demo-box text-center card-3d">
+          <h5>Click the button to see full stack in action:</h5>
+          <p id="stackMessage" class="fs-5 fw-bold gradient-text-orange">Awaiting click...</p>
+          <button class="btn btn-glow-orange" onclick="demonstrateStack()">
+            <i class="bi bi-lightning-charge-fill"></i> Run Demonstration
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       SECTION 2: HTML
+       THEME: RED → ORANGE
+  ====================================================== -->
+  <section id="html" class="py-5 section-3d theme-red">
+    <div class="container">
+      <h2 class="section-title text-center mb-4">
+        <span class="gradient-text-red">2. HTML (HyperText Markup Language)</span>
+      </h2>
+
+      <p class="lead text-center text-light">
+        HTML provides the <strong>structure</strong> and <strong>meaning</strong> of a web page.
+      </p>
+
+      <div class="row g-4 mt-3">
+        <div class="col-md-6">
+          <div class="glass-card p-4 h-100">
+            <h5><i class="bi bi-list-check text-danger"></i> Key Concepts Demonstrated</h5>
+            <ul>
+              <li><strong>Semantic tags:</strong> <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code></li>
+              <li><strong>Headings:</strong> <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code></li>
+              <li><strong>Lists:</strong> <code>&lt;ol&gt;</code> and <code>&lt;ul&gt;</code></li>
+              <li><strong>Links:</strong> <code>&lt;a href="..."&gt;</code></li>
+              <li><strong>Images:</strong> <code>&lt;img src="..." alt="..."&gt;</code></li>
+              <li><strong>Forms:</strong> <code>&lt;input&gt;</code>, <code>&lt;button&gt;</code></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- HTML DOCUMENT STRUCTURE DIAGRAM -->
+        <div class="col-md-6">
+          <div class="glass-card p-4 h-100">
+            <h5 class="text-center mb-3"><i class="bi bi-bounding-box-circles text-danger"></i> HTML Document Tree</h5>
+
+            <svg viewBox="0 0 400 320" class="diagram-svg" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="gHtml" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="rgb(255,60,60)"/>
+                  <stop offset="100%" stop-color="rgb(255,140,0)"/>
+                </linearGradient>
+              </defs>
+
+              <!-- html -->
+              <rect x="150" y="20" width="100" height="40" rx="10" fill="url(#gHtml)" class="diagram-box">
+                <animate attributeName="opacity" values="1;0.7;1" dur="2s" repeatCount="indefinite"/>
+              </rect>
+              <text x="200" y="46" text-anchor="middle" fill="white" font-weight="700">&lt;html&gt;</text>
+
+              <!-- head -->
+              <line x1="200" y1="60" x2="100" y2="100" stroke="rgb(255,140,0)" stroke-width="2"/>
+              <rect x="50" y="100" width="100" height="40" rx="10" fill="rgb(255,90,60)" class="diagram-box"/>
+              <text x="100" y="126" text-anchor="middle" fill="white" font-weight="700">&lt;head&gt;</text>
+
+              <!-- body -->
+              <line x1="200" y1="60" x2="300" y2="100" stroke="rgb(255,140,0)" stroke-width="2"/>
+              <rect x="250" y="100" width="100" height="40" rx="10" fill="rgb(255,60,60)" class="diagram-box"/>
+              <text x="300" y="126" text-anchor="middle" fill="white" font-weight="700">&lt;body&gt;</text>
+
+              <!-- head children -->
+              <line x1="100" y1="140" x2="60" y2="180" stroke="rgb(255,140,0)" stroke-width="2"/>
+              <rect x="10" y="180" width="90" height="35" rx="8" fill="rgb(200,50,50)" class="diagram-box"/>
+              <text x="55" y="203" text-anchor="middle" fill="white" font-size="12">&lt;title&gt;</text>
+
+              <line x1="100" y1="140" x2="140" y2="180" stroke="rgb(255,140,0)" stroke-width="2"/>
+              <rect x="105" y="180" width="90" height="35" rx="8" fill="rgb(200,50,50)" class="diagram-box"/>
+              <text x="150" y="203" text-anchor="middle" fill="white" font-size="12">&lt;meta&gt;</text>
+
+              <!-- body children -->
+              <line x1="300" y1="140" x2="260" y2="180" stroke="rgb(255,140,0)" stroke-width="2"/>
+              <rect x="215" y="180" width="90" height="35" rx="8" fill="rgb(200,50,50)" class="diagram-box"/>
+              <text x="260" y="203" text-anchor="middle" fill="white" font-size="12">&lt;header&gt;</text>
+
+              <line x1="300" y1="140" x2="340" y2="180" stroke="rgb(255,140,0)" stroke-width="2"/>
+              <rect x="305" y="180" width="90" height="35" rx="8" fill="rgb(200,50,50)" class="diagram-box"/>
+              <text x="350" y="203" text-anchor="middle" fill="white" font-size="12">&lt;main&gt;</text>
+
+              <!-- grandchildren -->
+              <line x1="350" y1="215" x2="350" y2="245" stroke="rgb(255,140,0)" stroke-width="2"/>
+              <rect x="305" y="245" width="90" height="35" rx="8" fill="rgb(150,40,40)" class="diagram-box"/>
+              <text x="350" y="268" text-anchor="middle" fill="white" font-size="11">&lt;section&gt;</text>
+
+              <line x1="260" y1="215" x2="200" y2="245" stroke="rgb(255,140,0)" stroke-width="2"/>
+              <rect x="155" y="245" width="90" height="35" rx="8" fill="rgb(150,40,40)" class="diagram-box"/>
+              <text x="200" y="268" text-anchor="middle" fill="white" font-size="11">&lt;nav&gt;</text>
+
+              <line x1="260" y1="215" x2="100" y2="245" stroke="rgb(255,140,0)" stroke-width="2"/>
+              <rect x="55" y="245" width="90" height="35" rx="8" fill="rgb(150,40,40)" class="diagram-box"/>
+              <text x="100" y="268" text-anchor="middle" fill="white" font-size="11">&lt;footer&gt;</text>
+            </svg>
+
+            <p class="text-center small mt-2">The nested tree structure of a standard HTML5 document.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-5">
+        <h4><i class="bi bi-play-circle text-danger"></i> Working Example: Rendered HTML</h4>
+
+        <div class="demo-box card-3d">
+          <section id="profile" class="text-center">
+            <h2 class="gradient-text-red">Student Profile</h2>
+            <div class="avatar-3d avatar-red mx-auto my-3">
+              <i class="bi bi-person-fill"></i>
+            </div>
+            <p>I am learning <strong>full stack</strong> development.</p>
+            <ul class="list-inline">
+              <li class="list-inline-item badge bg-danger">HTML</li>
+              <li class="list-inline-item badge bg-warning text-dark">CSS</li>
+              <li class="list-inline-item badge bg-success">JavaScript</li>
+            </ul>
+          </section>
+        </div>
+
+        <p class="mt-3 text-light">
+          <strong>Explanation:</strong> The browser reads semantic tags and renders a structured document.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       SECTION 3: CSS
+       THEME: BLUE → CYAN
+  ====================================================== -->
+  <section id="css" class="py-5 section-3d theme-blue">
+    <div class="container">
+      <h2 class="section-title text-center mb-4">
+        <span class="gradient-text-blue">3. CSS (Cascading Style Sheets)</span>
+      </h2>
+
+      <p class="lead text-center text-light">
+        CSS controls the <strong>presentation</strong> of HTML — colours, fonts, layout, and 3D transforms.
+      </p>
+
+      <div class="row g-4 mt-3">
+        <div class="col-md-6">
+          <div class="glass-card p-4 h-100">
+            <h5><i class="bi bi-palette-fill text-info"></i> Key Concepts Demonstrated</h5>
+            <ul>
+              <li><strong>Selectors:</strong> element, class, ID</li>
+              <li><strong>Box Model:</strong> margin, border, padding</li>
+              <li><strong>Flexbox &amp; Grid:</strong> modern layout</li>
+              <li><strong>Pseudo-classes:</strong> <code>:hover</code>, <code>:focus</code></li>
+              <li><strong>Transitions &amp; Animations</strong></li>
+              <li><strong>3D Transforms:</strong> <code>rotateY</code>, <code>perspective</code></li>
+              <li><strong>RGB &amp; Gradient colours</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- CSS BOX MODEL DIAGRAM -->
+        <div class="col-md-6">
+          <div class="glass-card p-4 h-100">
+            <h5 class="text-center mb-3"><i class="bi bi-box text-info"></i> CSS Box Model</h5>
+
+            <svg viewBox="0 0 400 340" class="diagram-svg" xmlns="http://www.w3.org/2000/svg">
+              <!-- MARGIN -->
+              <rect x="20" y="20" width="360" height="300" rx="14" fill="rgba(0,200,255,0.15)" stroke="rgb(0,200,255)" stroke-width="2" stroke-dasharray="6,4"/>
+              <text x="40" y="45" fill="rgb(0,200,255)" font-weight="700">margin</text>
+
+              <!-- BORDER -->
+              <rect x="70" y="60" width="260" height="220" rx="12" fill="rgba(0,150,255,0.15)" stroke="rgb(0,150,255)" stroke-width="2"/>
+              <text x="90" y="85" fill="rgb(0,150,255)" font-weight="700">border</text>
+
+              <!-- PADDING -->
+              <rect x="120" y="100" width="160" height="140" rx="10" fill="rgba(0,100,255,0.2)" stroke="rgb(0,100,255)" stroke-width="2"/>
+              <text x="140" y="125" fill="rgb(120,180,255)" font-weight="700">padding</text>
+
+              <!-- CONTENT -->
+              <rect x="160" y="140" width="80" height="60" rx="8" fill="rgb(138,43,226)" class="diagram-box">
+                <animate attributeName="opacity" values="1;0.75;1" dur="2s" repeatCount="indefinite"/>
+              </rect>
+              <text x="200" y="176" text-anchor="middle" fill="white" font-weight="700">content</text>
+
+              <!-- Labels with lines -->
+              <line x1="40" y1="290" x2="40" y2="310" stroke="rgb(0,200,255)" stroke-width="2"/>
+              <text x="40" y="328" text-anchor="middle" fill="rgb(0,200,255)" font-size="11">margin → outside</text>
+            </svg>
+
+            <p class="text-center small mt-2">Every HTML element is a box with 4 layers.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-5">
+        <h4><i class="bi bi-play-circle text-info"></i> Working Example: 3D Flip Box</h4>
+        <p class="text-light">Hover over the box below — CSS applies a 3D rotation:</p>
+
+        <div class="demo-box d-flex justify-content-center card-3d">
+          <div class="flip-card">
+            <div class="flip-inner">
+              <div class="flip-front">Hover Me</div>
+              <div class="flip-back">3D Flip! 🎉</div>
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-3 text-light">
+          <strong>Explanation:</strong> <code>transform-style: preserve-3d</code> and <code>rotateY()</code>
+          create a 3D flip effect when the user hovers.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       SECTION 4: BOOTSTRAP
+       THEME: PURPLE → INDIGO
+  ====================================================== -->
+  <section id="bootstrap" class="py-5 section-3d theme-purple">
+    <div class="container">
+      <h2 class="section-title text-center mb-4">
+        <span class="gradient-text-purple">4. Bootstrap Framework</span>
+      </h2>
+
+      <p class="lead text-center text-light">
+        Bootstrap provides pre-built components and a responsive 12-column grid system.
+      </p>
+
+      <div class="row g-4 mt-3">
+        <div class="col-md-6">
+          <div class="glass-card p-4 h-100">
+            <h5><i class="bi bi-bootstrap-fill text-purple"></i> Key Concepts Demonstrated</h5>
+            <ul>
+              <li><strong>Grid System:</strong> <code>container</code>, <code>row</code>, <code>col-md-6</code></li>
+              <li><strong>Components:</strong> buttons, cards, navbars, alerts</li>
+              <li><strong>Utilities:</strong> <code>mt-3</code>, <code>text-center</code>, <code>bg-primary</code></li>
+              <li><strong>Responsive Breakpoints</strong></li>
+              <li><strong>Bootstrap Icons</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- BOOTSTRAP GRID DIAGRAM -->
+        <div class="col-md-6">
+          <div class="glass-card p-4 h-100">
+            <h5 class="text-center mb-3"><i class="bi bi-grid-3x3-gap-fill text-purple"></i> 12-Column Grid System</h5>
+
+            <svg viewBox="0 0 400 300" class="diagram-svg" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="gGrid" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="rgb(138,43,226)"/>
+                  <stop offset="100%" stop-color="rgb(99,102,241)"/>
+                </linearGradient>
+                <linearGradient id="gGrid2" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="rgb(168,85,247)"/>
+                  <stop offset="100%" stop-color="rgb(139,92,246)"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Row 1: 12 columns -->
+              <text x="20" y="30" fill="white" font-weight="700" font-size="13">Row 1: col-1 × 12</text>
+              <g>
+                <rect x="20"  y="40" width="28" height="30" rx="4" fill="url(#gGrid)" class="diagram-box"/>
+                <rect x="52"  y="40" width="28" height="30" rx="4" fill="url(#gGrid)" class="diagram-box"/>
+                <rect x="84"  y="40" width="28" height="30" rx="4" fill="url(#gGrid)" class="diagram-box"/>
+                <rect x="116" y="40" width="28" height="30" rx="4" fill="url(#gGrid)" class="diagram-box"/>
+                <rect x="148" y="40" width="28" height="30" rx="4" fill="url(#gGrid)" class="diagram-box"/>
+                <rect x="180" y="40" width="28" height="30" rx="4" fill="url(#gGrid)" class="diagram-box"/>
+                <rect x="212" y="40" width="28" height="30" rx="4" fill="url(#gGrid)" class="diagram-box"/>
+                <rect x="244" y="40" width="28" height="30" rx="4" fill="url(#gGrid)" class="diagram-box"/>
+                <rect x="276" y="40" width="28" height="30" rx="4" fill="url(#gGrid)" class="diagram-box"/>
+                <rect x="308" y="40" width="28" height="30" rx="4" fill="url(#gGrid)" class="diagram-box"/>
+                <rect x="340" y="40" width="28" height="30" rx="4" fill="url(#gGrid)" class="diagram-box"/>
+                <rect x="372" y="40" width="28" height="30" rx="4" fill="url(#gGrid)" class="diagram-box"/>
+              </g>
+
+              <!-- Row 2: 3 col-4 -->
+              <text x="20" y="110" fill="white" font-weight="700" font-size="13">Row 2: col-md-4 × 3</text>
+              <rect x="20"  y="120" width="118" height="45" rx="6" fill="url(#gGrid2)" class="diagram-box"/>
+              <text x="79"  y="148" text-anchor="middle" fill="white" font-size="12">col-md-4</text>
+              <rect x="142" y="120" width="118" height="45" rx="6" fill="url(#gGrid2)" class="diagram-box"/>
+              <text x="201" y="148" text-anchor="middle" fill="white" font-size="12">col-md-4</text>
+              <rect x="264" y="120" width="118" height="45" rx="6" fill="url(#gGrid2)" class="diagram-box"/>
+              <text x="323" y="148" text-anchor="middle" fill="white" font-size="12">col-md-4</text>
+
+              <!-- Row 3: 2 col-6 -->
+              <text x="20" y="195" fill="white" font-weight="700" font-size="13">Row 3: col-md-6 × 2</text>
+              <rect x="20"  y="205" width="180" height="45" rx="6" fill="url(#gGrid)" class="diagram-box"/>
+              <text x="110" y="233" text-anchor="middle" fill="white" font-size="12">col-md-6</text>
+              <rect x="204" y="205" width="180" height="45" rx="6" fill="url(#gGrid)" class="diagram-box"/>
+              <text x="294" y="233" text-anchor="middle" fill="white" font-size="12">col-md-6</text>
+
+              <text x="20" y="285" fill="rgb(200,180,255)" font-size="11">Total = 12 columns per row (on md screens and above)</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-5">
+        <h4><i class="bi bi-play-circle text-purple"></i> Working Example: Bootstrap Grid + Components</h4>
+
+        <div class="demo-box card-3d">
+          <div class="row g-3">
+            <div class="col-md-4">
+              <div class="card p-3 text-center card-3d h-100">
+                <i class="bi bi-filetype-html display-4 text-danger icon-bounce"></i>
+                <h5 class="mt-2">Card 1</h5>
+                <button class="btn btn-glow-purple btn-sm">Click</button>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card p-3 text-center card-3d h-100">
+                <i class="bi bi-filetype-css display-4 text-primary icon-bounce"></i>
+                <h5 class="mt-2">Card 2</h5>
+                <button class="btn btn-glow-purple btn-sm">Click</button>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card p-3 text-center card-3d h-100">
+                <i class="bi bi-filetype-js display-4 text-warning icon-bounce"></i>
+                <h5 class="mt-2">Card 3</h5>
+                <button class="btn btn-glow-purple btn-sm">Click</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="alert alert-info mt-4 mb-0 card-3d">
+            <i class="bi bi-info-circle"></i> This alert is a Bootstrap component.
+          </div>
+        </div>
+
+        <p class="mt-3 text-light">
+          <strong>Explanation:</strong> <code>col-md-4</code> makes each card take 4 of the 12 grid columns
+          on medium screens and above. On smaller screens, they stack automatically.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       SECTION 5: JAVASCRIPT
+       THEME: YELLOW → GREEN
+  ====================================================== -->
+  <section id="javascript" class="py-5 section-3d theme-green">
+    <div class="container">
+      <h2 class="section-title text-center mb-4">
+        <span class="gradient-text-green">5. JavaScript</span>
+      </h2>
+
+      <p class="lead text-center text-light">
+        JavaScript adds <strong>interactivity</strong>, <strong>dynamic behaviour</strong>, and <strong>logic</strong>.
+      </p>
+
+      <div class="row g-4 mt-3">
+        <div class="col-md-6">
+          <div class="glass-card p-4 h-100">
+            <h5><i class="bi bi-lightning-charge-fill text-warning"></i> Key Concepts Demonstrated</h5>
+            <ul>
+              <li><strong>Variables:</strong> <code>let</code>, <code>const</code></li>
+              <li><strong>Functions:</strong> declaration, arrow functions</li>
+              <li><strong>DOM Manipulation</strong></li>
+              <li><strong>Event Listeners</strong></li>
+              <li><strong>Conditionals &amp; Loops</strong></li>
+              <li><strong>Form Validation</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- JAVASCRIPT EVENT FLOW DIAGRAM -->
+        <div class="col-md-6">
+          <div class="glass-card p-4 h-100">
+            <h5 class="text-center mb-3"><i class="bi bi-arrow-repeat text-warning"></i> JS Event Flow</h5>
+
+            <svg viewBox="0 0 400 320" class="diagram-svg" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="gEvent" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="rgb(255,200,0)"/>
+                  <stop offset="100%" stop-color="rgb(0,255,170)"/>
+                </linearGradient>
+                <linearGradient id="gDOM" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="rgb(0,255,170)"/>
+                  <stop offset="100%" stop-color="rgb(0,200,255)"/>
+                </linearGradient>
+              </defs>
+
+              <!-- STEP 1 -->
+              <rect x="40" y="20" width="320" height="55" rx="14" fill="url(#gEvent)" class="diagram-box">
+                <animate attributeName="opacity" values="1;0.7;1" dur="3s" repeatCount="indefinite"/>
+              </rect>
+              <text x="200" y="45" text-anchor="middle" fill="black" font-size="14" font-weight="700">1. User Clicks Button</text>
+              <text x="200" y="62" text-anchor="middle" fill="black" font-size="11">🖱️ Click event triggered</text>
+
+              <line x1="200" y1="80" x2="200" y2="105" stroke="white" stroke-width="2" stroke-dasharray="5,4">
+                <animate attributeName="stroke-dashoffset" from="0" to="18" dur="1s" repeatCount="indefinite"/>
+              </line>
+              <polygon points="200,110 193,100 207,100" fill="white"/>
+
+              <!-- STEP 2 -->
+              <rect x="40" y="115" width="320" height="55" rx="14" fill="url(#gDOM)" class="diagram-box">
+                <animate attributeName="opacity" values="1;0.7;1" dur="3s" begin="0.7s" repeatCount="indefinite"/>
+              </rect>
+              <text x="200" y="140" text-anchor="middle" fill="black" font-size="14" font-weight="700">2. Event Listener Fires</text>
+              <text x="200" y="157" text-anchor="middle" fill="black" font-size="11">addEventListener('click', ...)</text>
+
+              <line x1="200" y1="175" x2="200" y2="200" stroke="white" stroke-width="2" stroke-dasharray="5,4">
+                <animate attributeName="stroke-dashoffset" from="0" to="18" dur="1s" repeatCount="indefinite"/>
+              </line>
+              <polygon points="200,205 193,195 207,195" fill="white"/>
+
+              <!-- STEP 3 -->
+              <rect x="40" y="210" width="320" height="55" rx="14" fill="url(#gEvent)" class="diagram-box">
+                <animate attributeName="opacity" values="1;0.7;1" dur="3s" begin="1.4s" repeatCount="indefinite"/>
+              </rect>
+              <text x="200" y="235" text-anchor="middle" fill="black" font-size="14" font-weight="700">3. JavaScript Runs Code</text>
+              <text x="200" y="252" text-anchor="middle" fill="black" font-size="11">counter++ · logic · conditions</text>
+
+              <line x1="200" y1="270" x2="200" y2="290" stroke="white" stroke-width="2" stroke-dasharray="5,4">
+                <animate attributeName="stroke-dashoffset" from="0" to="18" dur="1s" repeatCount="indefinite"/>
+              </line>
+              <polygon points="200,295 193,285 207,285" fill="white"/>
+
+              <!-- STEP 4 -->
+              <rect x="40" y="300" width="320" height="15" rx="6" fill="rgb(0,255,170)" class="diagram-box"/>
+              <text x="200" y="312" text-anchor="middle" fill="black" font-size="11" font-weight="700">4. DOM Updated → User Sees Result</text>
+            </svg>
+
+            <p class="text-center small mt-2">The 4-step lifecycle of a JavaScript interaction.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-5">
+        <h4><i class="bi bi-play-circle text-warning"></i> Working Example: Interactive Counter</h4>
+
+        <div class="demo-box text-center card-3d">
+          <p id="jsOutput" class="fs-3 fw-bold gradient-text-green">You clicked 0 time(s)!</p>
+          <button id="jsBtn" class="btn btn-glow-green">
+            <i class="bi bi-hand-index-thumb"></i> Click Me
+          </button>
+          <button id="jsReset" class="btn btn-outline-light ms-2">
+            <i class="bi bi-arrow-counterclockwise"></i> Reset
+          </button>
+        </div>
+
+        <h5 class="mt-5 text-light">Additional Demo: Form Validation</h5>
+        <div class="demo-box card-3d">
+          <form id="jsForm" class="row g-2" novalidate>
+            <div class="col-md-5">
+              <input type="text" id="jsName" class="form-control" placeholder="Enter your name" />
+            </div>
+            <div class="col-md-5">
+              <input type="email" id="jsEmail" class="form-control" placeholder="Enter your email" />
+            </div>
+            <div class="col-md-2">
+              <button type="submit" class="btn btn-glow-green w-100">Validate</button>
+            </div>
+            <div class="col-12">
+              <p id="jsFeedback" class="mt-2 mb-0"></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="text-white text-center py-4 footer-3d">
+    <p class="mb-1">&copy; 2025 CET138 ePortfolio — Full Stack Development</p>
+    <small>Built with HTML, CSS, Bootstrap 5 &amp; JavaScript</small>
+  </footer>
+
+  <button id="topBtn" class="btn btn-glow rounded-circle">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
